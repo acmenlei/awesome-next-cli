@@ -1,7 +1,7 @@
 "use client";
 
 import Modal from "@/components/Modal";
-import NiceModal from "@ebay/nice-modal-react";
+import NiceModal from "@ebay/nice-modal-react/lib/esm";
 import { useCallback } from "react";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
 
   return (
     <NiceModal.Provider>
-      <button onClick={test} className=" btn btn-primary btn-sm">
+      <button onClick={test} className=" btn btn-primary btn-md">
         执行
       </button>
     </NiceModal.Provider>
