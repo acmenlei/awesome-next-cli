@@ -1,19 +1,19 @@
 "use client";
-import Modal from "@/components/Modals";
+
+import Modal from "@/components/Modal";
 import NiceModal from "@ebay/nice-modal-react";
-import { Button } from "antd";
 import { useCallback } from "react";
 
 export default function Home() {
-  const test = useCallback(function () {
+  const test = useCallback(() => {
     NiceModal.show(Modal, { title: "温馨提示", content: "这是一段提示信息" });
   }, []);
 
   return (
     <NiceModal.Provider>
-      <Button onClick={test} type="primary">
+      <button onClick={test} className=" btn btn-primary btn-sm">
         执行
-      </Button>
+      </button>
     </NiceModal.Provider>
   );
 }
