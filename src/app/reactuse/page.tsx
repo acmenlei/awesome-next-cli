@@ -1,14 +1,19 @@
-import { queryTest } from "./api";
-import Test from "./components/Test";
-import { Suspense } from "react";
+"use client";
+
+import Modal from "@/components/Modal";
+import NiceModal from "@ebay/nice-modal-react";
+import { Button } from "@nextui-org/react";
 
 export default function Flow() {
+  function handle() {
+    NiceModal.show(Modal);
+  }
   // 数据由父组件传递
   return (
-    <>
-      <Suspense fallback={<div>正在加载</div>}>
-        <Test data={queryTest()} />
-      </Suspense>
-    </>
+    <NiceModal.Provider>
+      <Button color="primary" onPress={handle}>
+        启动
+      </Button>
+    </NiceModal.Provider>
   );
 }
